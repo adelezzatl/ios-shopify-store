@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ProductDetailViewController.h
 //  ShopifyStoreFront
 //
 //  Created by Guillaume Dorion-Racine on 2016-01-17.
@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@class BUYProduct;
 
-@property (strong, nonatomic) UIWindow *window;
+@interface ProductDetailViewController : UIViewController
+
+@property (nonatomic) BUYProduct * product;
 
 @end
-
