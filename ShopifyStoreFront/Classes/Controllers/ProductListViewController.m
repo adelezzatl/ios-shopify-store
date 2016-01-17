@@ -6,13 +6,13 @@
 //  Copyright © 2016 Guillaume Dorion-Racine. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ProductListViewController.h"
 #import "Buy.h"
 #import "ProductDetailViewController.h"
 #import <SVPullToRefresh/SVPullToRefresh.h>
 #import <libextobjc/extobjc.h>
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ProductListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView * tableView;
 @property (nonatomic) NSArray * products;

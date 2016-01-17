@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  ShopifyApi.h
 //  ShopifyStoreFront
 //
 //  Created by Guillaume Dorion-Racine on 2016-01-17.
 //  Copyright © 2016 Guillaume Dorion-Racine. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : UIViewController
-
+@interface ShopifyApi : NSObject
 
 @end
-
