@@ -1,33 +1,32 @@
 //
-//  ViewController.m
+//  ProductListViewController.m
 //  ShopifyStoreFront
 //
 //  Created by Guillaume Dorion-Racine on 2016-01-17.
 //  Copyright © 2016 Guillaume Dorion-Racine. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ProductListViewController.h"
 #import "Buy.h"
 #import "ProductDetailViewController.h"
 #import <SVPullToRefresh/SVPullToRefresh.h>
 #import <libextobjc/extobjc.h>
+#import "ShopifyApi.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ProductListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView * tableView;
 @property (nonatomic) NSArray * products;
 
 @end
 
-@implementation ViewController
+@implementation ProductListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-    [self loadProducts];
     
     @weakify(self);
     [self.tableView addPullToRefreshWithActionHandler:^{
@@ -38,17 +37,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    [self loadProducts];
 }
 
 
 - (void)loadProducts {
-    // Fetch products
-    BUYClient *client = [[BUYClient alloc] initWithShopDomain:@"guildorion.myshopify.com"
-                                                       apiKey:@"a64084614118289868985651830f1b68"
-                                                    channelId:@"43534278"];
-    
-    [client getProductsPage:0 completion:^(NSArray *products, NSUInteger page, BOOL reachedEnd, NSError *error) {
+    [[ShopifyApi client] getProductsPage:0 completion:^(NSArray *products, NSUInteger page, BOOL reachedEnd, NSError *error) {
         self.products = [products copy];
         [self.tableView reloadData];
         [self.tableView.pullToRefreshView stopAnimating];

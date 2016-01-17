@@ -1,5 +1,5 @@
 //
-//  ProductDetailViewController.h
+//  ProductListViewController.h
 //  ShopifyStoreFront
 //
 //  Created by Guillaume Dorion-Racine on 2016-01-17.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class BUYProduct;
+@interface ProductListViewController : UIViewController
 
-@interface ProductDetailViewController : UIViewController
-
-@property (nonatomic) BUYProduct * product;
 
 @end
+

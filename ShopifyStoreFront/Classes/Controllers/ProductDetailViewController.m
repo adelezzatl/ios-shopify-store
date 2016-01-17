@@ -8,6 +8,8 @@
 
 #import "ProductDetailViewController.h"
 #import "Buy.h"
+#import "ShopifyApi.h"
+#import "BUYProductVariant.h"
 
 @interface ProductDetailViewController()
 
@@ -23,6 +25,8 @@
     [super viewDidLoad];
     self.titleLabel.text = self.product.title;
     self.productImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.product.images firstObject].src]]];
+    BUYProductVariant * variant = [self.product.variants firstObject];
+    self.priceLabel.text = [NSString stringWithFormat:@"%.2f $", [variant.price floatValue]];
 }
 
 @end

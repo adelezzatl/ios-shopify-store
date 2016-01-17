@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Product List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProductListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="-270"/>
+            <point key="canvasLocation" x="872" y="-466"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="zuG-tg-jM9">
@@ -86,27 +86,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-bl-07n">
-                                <rect key="frame" x="180" y="28" width="240" height="240"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-bl-07n">
+                                <rect key="frame" x="0.0" y="64" width="600" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="MKp-KA-8d2"/>
+                                    <constraint firstAttribute="width" constant="600" id="MKp-KA-8d2"/>
                                     <constraint firstAttribute="height" constant="240" id="wf0-SN-3LA"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ot-pv-pm7">
-                                <rect key="frame" x="180" y="289" width="122" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szj-qD-Ai5">
+                                <rect key="frame" x="350" y="325" width="136" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="hgZ-Tu-XgZ"/>
+                                    <constraint firstAttribute="width" constant="136" id="4ql-6u-IRb"/>
+                                    <constraint firstAttribute="height" constant="21" id="Vby-4M-zaz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szj-qD-Ai5">
-                                <rect key="frame" x="350" y="289" width="70" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ot-pv-pm7">
+                                <rect key="frame" x="113" y="325" width="189" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="4ql-6u-IRb"/>
-                                    <constraint firstAttribute="height" constant="21" id="Vby-4M-zaz"/>
+                                    <constraint firstAttribute="height" constant="21" id="hgZ-Tu-XgZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -115,12 +115,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4Ot-pv-pm7" firstAttribute="leading" secondItem="8T9-bl-07n" secondAttribute="leading" id="1ke-sx-zK6"/>
+                            <constraint firstItem="4Ot-pv-pm7" firstAttribute="leading" secondItem="8T9-bl-07n" secondAttribute="leading" constant="113" id="1ke-sx-zK6"/>
                             <constraint firstItem="8T9-bl-07n" firstAttribute="centerX" secondItem="CAr-gu-Li1" secondAttribute="centerX" id="1rS-EZ-ulC"/>
-                            <constraint firstItem="Szj-qD-Ai5" firstAttribute="trailing" secondItem="8T9-bl-07n" secondAttribute="trailing" id="WaJ-kR-kOa"/>
+                            <constraint firstItem="Szj-qD-Ai5" firstAttribute="trailing" secondItem="8T9-bl-07n" secondAttribute="trailing" constant="-114" id="WaJ-kR-kOa"/>
                             <constraint firstItem="Szj-qD-Ai5" firstAttribute="leading" secondItem="4Ot-pv-pm7" secondAttribute="trailing" constant="48" id="bNL-Sd-whW"/>
                             <constraint firstItem="Szj-qD-Ai5" firstAttribute="top" secondItem="8T9-bl-07n" secondAttribute="bottom" constant="21" id="rXK-7I-aoH"/>
-                            <constraint firstItem="8T9-bl-07n" firstAttribute="top" secondItem="JMs-Ev-BF4" secondAttribute="bottom" constant="8" id="vMe-rN-3K2"/>
+                            <constraint firstItem="8T9-bl-07n" firstAttribute="top" secondItem="JMs-Ev-BF4" secondAttribute="bottom" id="vMe-rN-3K2"/>
                             <constraint firstItem="4Ot-pv-pm7" firstAttribute="top" secondItem="8T9-bl-07n" secondAttribute="bottom" constant="21" id="yoP-Ne-cSO"/>
                         </constraints>
                     </view>
@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiH-aP-ldv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="-451"/>
+            <point key="canvasLocation" x="1572" y="-614"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6cE-Lf-1OO">
