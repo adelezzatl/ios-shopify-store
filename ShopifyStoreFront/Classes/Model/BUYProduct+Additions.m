@@ -18,6 +18,7 @@
         [sortedProducts setObject:[NSMutableArray new] forKey:title];
     }
     
+    // Adding products to sorted dictionary
     for (BUYProduct * product in products) {
         NSString * key = [product.title substringWithRange:NSMakeRange(0, 1)];
         key = ([key length] && isnumber([key characterAtIndex:0])) ? @"#" : [key uppercaseString];
