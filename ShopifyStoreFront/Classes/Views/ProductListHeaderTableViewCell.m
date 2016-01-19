@@ -11,7 +11,6 @@
 @interface ProductListHeaderTableViewCell()
 
 @property (nonatomic) IBOutlet UILabel * headerLabel;
-@property (nonatomic) IBOutlet UILabel * headerLabel2;
 
 @end
 

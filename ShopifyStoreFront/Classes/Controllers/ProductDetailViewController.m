@@ -7,9 +7,9 @@
 //
 
 #import "ProductDetailViewController.h"
-#import "Buy.h"
 #import "ShopifyApi.h"
-#import "BUYProductVariant.h"
+
+#import "Buy.h"
 
 @interface ProductDetailViewController()
 
@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.titleLabel.text = self.product.title;
     self.productImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.product.images firstObject].src]]];
     BUYProductVariant * variant = [self.product.variants firstObject];
