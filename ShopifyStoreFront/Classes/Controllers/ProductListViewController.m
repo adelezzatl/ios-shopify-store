@@ -12,11 +12,15 @@
 #import <SVPullToRefresh/SVPullToRefresh.h>
 #import <libextobjc/extobjc.h>
 #import "ShopifyApi.h"
+#import "BUYProduct+Additions.h"
 
 @interface ProductListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView * tableView;
 @property (nonatomic) NSArray * products;
+
+@property (nonatomic) NSDictionary * sortedProducts; // A-Z sorting applied
+@property (nonatomic) NSArray * sortedKeys; // A-Z sorting applied
 
 @end
 
@@ -37,21 +41,32 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.tableView.pullToRefreshView startAnimating];
     [self loadProducts];
 }
-
 
 - (void)loadProducts {
     [[ShopifyApi client] getProductsPage:0 completion:^(NSArray *products, NSUInteger page, BOOL reachedEnd, NSError *error) {
         self.products = [products copy];
+        self.sortedProducts = [BUYProduct sortedProductsByTitle:[products copy]];
+        self.sortedKeys = [self.sortedProducts.allKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+
         [self.tableView reloadData];
         [self.tableView.pullToRefreshView stopAnimating];
     }];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.sortedProducts.allKeys.count;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.products.count;
+    NSArray * products = [self.sortedProducts objectForKey:self.sortedKeys[section]];
+    return products.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return self.sortedKeys[section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,7 +75,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProductCell"];
     }
     
-    BUYProduct * product = self.products[indexPath.item];
+    BUYProduct * product = [self.sortedProducts objectForKey:self.sortedKeys[indexPath.section]][indexPath.row];
     cell.textLabel.text = product.title;
     return cell;
 }
@@ -68,7 +83,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     ProductDetailViewController *controller = segue.destinationViewController;
-    controller.product = [self.products objectAtIndex:indexPath.row];
+    BUYProduct * product = [self.sortedProducts objectForKey:self.sortedKeys[indexPath.section]][indexPath.row];
+    controller.product = product;
 }
 
 @end
