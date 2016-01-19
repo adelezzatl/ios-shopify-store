@@ -49,7 +49,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LjO-lA-vaK">
-                                                    <rect key="frame" x="542" y="8" width="50" height="50"/>
+                                                    <rect key="frame" x="532" y="8" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="4b5-sC-GFH"/>
                                                         <constraint firstAttribute="height" constant="50" id="hM4-Yv-4CO"/>
@@ -57,7 +57,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="LjO-lA-vaK" secondAttribute="trailing" id="Gr6-zh-TZe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LjO-lA-vaK" secondAttribute="trailing" constant="10" id="Gr6-zh-TZe"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MI3-15-YVn" secondAttribute="trailing" constant="98" id="IdM-Yd-FB0"/>
                                                 <constraint firstItem="MI3-15-YVn" firstAttribute="leading" secondItem="xPN-MK-lj6" secondAttribute="leadingMargin" constant="27" id="MLF-cg-JwD"/>
                                                 <constraint firstItem="3mT-mD-xHl" firstAttribute="leading" secondItem="xPN-MK-lj6" secondAttribute="leadingMargin" constant="27" id="Ouw-nV-t17"/>
@@ -82,7 +82,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHF-K0-wWq">
-                                                    <rect key="frame" x="14" y="22" width="515" height="22"/>
+                                                    <rect key="frame" x="14" y="19" width="515" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="SHI-W3-DgN"/>
                                                     </constraints>
@@ -109,7 +109,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProductIcon" translatesAutoresizingMaskIntoConstraints="NO" id="p4s-vs-tDp">
-                                                    <rect key="frame" x="565" y="20" width="27" height="27"/>
+                                                    <rect key="frame" x="565" y="17" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="Bq2-3i-z5A"/>
                                                         <constraint firstAttribute="width" constant="27" id="ujR-5J-Knn"/>
@@ -119,10 +119,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="p4s-vs-tDp" secondAttribute="trailing" id="9Yw-JY-lD0"/>
                                                 <constraint firstItem="aCa-zf-TkX" firstAttribute="leading" secondItem="QtE-QW-fet" secondAttribute="leadingMargin" constant="27" id="9gv-0u-216"/>
-                                                <constraint firstItem="p4s-vs-tDp" firstAttribute="centerY" secondItem="QtE-QW-fet" secondAttribute="centerY" constant="4" id="DEP-fy-KEe"/>
+                                                <constraint firstItem="p4s-vs-tDp" firstAttribute="centerY" secondItem="QtE-QW-fet" secondAttribute="centerY" constant="1" id="DEP-fy-KEe"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="kpu-mt-igy" secondAttribute="bottom" constant="2" id="Kas-hw-mvZ"/>
                                                 <constraint firstItem="LHF-K0-wWq" firstAttribute="leading" secondItem="QtE-QW-fet" secondAttribute="leadingMargin" constant="6" id="RpL-BS-dHs"/>
-                                                <constraint firstItem="LHF-K0-wWq" firstAttribute="centerY" secondItem="QtE-QW-fet" secondAttribute="centerY" constant="3.5" id="SKc-MS-rKx"/>
+                                                <constraint firstItem="LHF-K0-wWq" firstAttribute="centerY" secondItem="QtE-QW-fet" secondAttribute="centerY" constant="0.5" id="SKc-MS-rKx"/>
                                                 <constraint firstItem="kpu-mt-igy" firstAttribute="leading" secondItem="QtE-QW-fet" secondAttribute="leadingMargin" constant="27" id="WOv-hd-oZL"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aCa-zf-TkX" secondAttribute="trailing" constant="98" id="ajh-1m-twz"/>
                                                 <constraint firstAttribute="topMargin" secondItem="aCa-zf-TkX" secondAttribute="top" id="mgw-vZ-RTk"/>
