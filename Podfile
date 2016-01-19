@@ -4,7 +4,6 @@ platform :ios, '8.0'
 target 'ShopifyStoreFront' do
     pod 'SVPullToRefresh'
     pod 'AFNetworking', '~> 2.0'
-    pod 'Masonry'
     pod 'libextobjc'
     pod "Mobile-Buy-SDK"
 end

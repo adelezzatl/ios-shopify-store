@@ -13,6 +13,8 @@
 #import <libextobjc/extobjc.h>
 #import "ShopifyApi.h"
 #import "BUYProduct+Additions.h"
+#import "ProductListItemTableViewCell.h"
+#import "ProductListHeaderTableViewCell.h"
 
 @interface ProductListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -31,6 +33,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.title = @"Products";
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:46/255 green:53/255 blue:56/255 alpha:1.0f];
     
     @weakify(self);
     [self.tableView addPullToRefreshWithActionHandler:^{
@@ -57,27 +61,70 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sortedProducts.allKeys.count;
+    return self.sortedProducts.allKeys.count + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray * products = [self.sortedProducts objectForKey:self.sortedKeys[section]];
+    if (section == 0) {
+        return 1;
+    }
+    
+    NSArray * products = [self.sortedProducts objectForKey:self.sortedKeys[section - 1]];
     return products.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return self.sortedKeys[section];
+    if (section > 0) {
+        return self.sortedKeys[section - 1];
+    }
+    
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section > 0) {
+        return 28;
+    }
+    
+    return 0;
+}
+
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    ProductListHeaderTableViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:@"ProductHeader"];
+    if (section == 0) {
+        [headerView updateWithHeader:@""];
+    }
+    else {
+        [headerView updateWithHeader:self.sortedKeys[section - 1]];
+    }
+    
+    return headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"ProductCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProductCell"];
+    if (indexPath.section == 0) {
+        UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"AddProductCell"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"AddProductCell"];
+        }
+        
+        return cell;
     }
+    else {
+        ProductListItemTableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"ProductCell"];
+        if (!cell) {
+            cell = [[ProductListItemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProductCell"];
+        }
+        
+        BUYProduct * product = [self.sortedProducts objectForKey:self.sortedKeys[indexPath.section - 1]][indexPath.row];
+        [cell updateWithProduct:product];
     
-    BUYProduct * product = [self.sortedProducts objectForKey:self.sortedKeys[indexPath.section]][indexPath.row];
-    cell.textLabel.text = product.title;
-    return cell;
+        return cell;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

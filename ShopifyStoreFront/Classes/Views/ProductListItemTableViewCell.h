@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BUYProduct;
+
 @interface ProductListItemTableViewCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UIImageView * previewImageView;
-@property (nonatomic, weak) IBOutlet UILabel * titleLabel;
-@property (nonatomic, weak) IBOutlet UILabel * inventoryLabel;
+- (void)updateWithProduct:(BUYProduct *)product;
 
 @end

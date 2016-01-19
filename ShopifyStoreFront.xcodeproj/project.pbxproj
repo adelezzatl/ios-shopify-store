@@ -20,6 +20,7 @@
 		09D92B071C4C58AE00081CE1 /* ShopifyApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D92B061C4C58AE00081CE1 /* ShopifyApi.m */; };
 		09D92B0B1C4C694900081CE1 /* ProductListItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D92B0A1C4C694800081CE1 /* ProductListItemTableViewCell.m */; };
 		09D92B0E1C4C6A5300081CE1 /* BUYProduct+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D92B0D1C4C6A5300081CE1 /* BUYProduct+Additions.m */; };
+		09EEF86E1C4DEAB100064572 /* ProductListHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EEF86D1C4DEAB100064572 /* ProductListHeaderTableViewCell.m */; };
 		BB8B46DA143C2DA8B44D029F /* libPods-ShopifyStoreFront.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 868B8986E1B166791BD9BF8A /* libPods-ShopifyStoreFront.a */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +56,7 @@
 		090589AC1C4C3679007EBCBA /* ShopifyStoreFrontUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopifyStoreFrontUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		090589B01C4C3679007EBCBA /* ShopifyStoreFrontUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopifyStoreFrontUITests.m; sourceTree = "<group>"; };
 		090589B21C4C3679007EBCBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		090589C01C4C37F3007EBCBA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		090589C01C4C37F3007EBCBA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		09D92AFF1C4C57D500081CE1 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailViewController.h; path = Classes/Controllers/ProductDetailViewController.h; sourceTree = "<group>"; };
 		09D92B001C4C57D500081CE1 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailViewController.m; path = Classes/Controllers/ProductDetailViewController.m; sourceTree = "<group>"; };
 		09D92B011C4C57D500081CE1 /* ProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductListViewController.h; path = Classes/Controllers/ProductListViewController.h; sourceTree = "<group>"; };
@@ -66,6 +67,8 @@
 		09D92B0A1C4C694800081CE1 /* ProductListItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductListItemTableViewCell.m; path = Classes/Views/ProductListItemTableViewCell.m; sourceTree = "<group>"; };
 		09D92B0C1C4C6A5300081CE1 /* BUYProduct+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BUYProduct+Additions.h"; path = "Classes/Model/BUYProduct+Additions.h"; sourceTree = "<group>"; };
 		09D92B0D1C4C6A5300081CE1 /* BUYProduct+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BUYProduct+Additions.m"; path = "Classes/Model/BUYProduct+Additions.m"; sourceTree = "<group>"; };
+		09EEF86C1C4DEAB100064572 /* ProductListHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductListHeaderTableViewCell.h; path = Classes/Views/ProductListHeaderTableViewCell.h; sourceTree = "<group>"; };
+		09EEF86D1C4DEAB100064572 /* ProductListHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductListHeaderTableViewCell.m; path = Classes/Views/ProductListHeaderTableViewCell.m; sourceTree = "<group>"; };
 		54DA702847EB3874F2CE6FB0 /* Pods-ShopifyStoreFront.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyStoreFront.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyStoreFront/Pods-ShopifyStoreFront.release.xcconfig"; sourceTree = "<group>"; };
 		868B8986E1B166791BD9BF8A /* libPods-ShopifyStoreFront.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShopifyStoreFront.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E2A90BB6B8A09D60E5052C /* Pods-ShopifyStoreFront.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyStoreFront.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyStoreFront/Pods-ShopifyStoreFront.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				090589941C4C3679007EBCBA /* Main.storyboard */,
 				09D92B091C4C694800081CE1 /* ProductListItemTableViewCell.h */,
 				09D92B0A1C4C694800081CE1 /* ProductListItemTableViewCell.m */,
+				09EEF86C1C4DEAB100064572 /* ProductListHeaderTableViewCell.h */,
+				09EEF86D1C4DEAB100064572 /* ProductListHeaderTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09EEF86E1C4DEAB100064572 /* ProductListHeaderTableViewCell.m in Sources */,
 				09D92B071C4C58AE00081CE1 /* ShopifyApi.m in Sources */,
 				09D92B031C4C57D500081CE1 /* ProductDetailViewController.m in Sources */,
 				090589901C4C3679007EBCBA /* AppDelegate.m in Sources */,
